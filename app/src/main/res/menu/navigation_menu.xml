@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/marsOption"
+        android:icon="@drawable/mars"
+        android:title="Mars"/>
+    <item android:id="@+id/moonOption"
+        android:icon="@drawable/moon"
+        android:title="Moon"/>
+
+</menu>

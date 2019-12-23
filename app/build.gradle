@@ -1,0 +1,49 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.ar.sceneform.plugin'
+
+android {
+    compileSdkVersion 28
+    buildToolsVersion '29.0.2'
+    defaultConfig {
+        applicationId "com.flashlight.marsar"
+        minSdkVersion 24
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'com.google.ar.sceneform.ux:sceneform-ux:1.14.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+    implementation 'com.google.android.material:material:1.2.0-alpha02'
+
+}
+
+
+sceneform.asset('sampledata/mars/scene.gltf',
+        'default',
+        'sampledata/mars/scene.sfa',
+        'src/main/assets/scene')
+
+
+sceneform.asset('sampledata/moon/Moon_1_3474.glb',
+        'default',
+        'sampledata/moon/Moon_1_3474.sfa',
+        'src/main/assets/Moon_1_3474')
